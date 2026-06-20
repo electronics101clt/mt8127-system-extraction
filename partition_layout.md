@@ -47,16 +47,27 @@ Based on scatter file: `MT3367_Android_scatter - DRAM fixed.txt`
 - **Contains:** Android OS, system apps, frameworks, SystemUI
 - **Target File:** MtkSystemUI.apk at `/system/priv-app/MtkSystemUI/MtkSystemUI.apk`
 
-### Block Device Mapping (likely)
+### Block Device Mapping - VERIFIED ✅
+
+**IMPORTANT:** Scatter file partition order does NOT match actual block device numbers!
+
+Actual device mapping (verified via `adb shell mount`):
 ```
-/dev/block/mmcblk0p1  -> pgpt
-/dev/block/mmcblk0p2  -> PRO_INFO
-/dev/block/mmcblk0p3  -> NVRAM
-...
-/dev/block/mmcblk0p23 -> ANDROID (system)
-/dev/block/mmcblk0p24 -> CACHE
-/dev/block/mmcblk0p25 -> userdata
+/dev/block/mmcblk0p22 -> ANDROID (system) ✅ VERIFIED
+/dev/block/mmcblk0p23 -> Unknown (NOT system as scatter suggests)
+/dev/block/mmcblk0p24 -> Unknown
 ```
+
+**System partition confirmed at mmcblk0p22:**
+```bash
+adb shell "mount | grep system"
+# /dev/block/mmcblk0p22 on /system type ext4 (ro,seclabel,relatime,data=ordered)
+
+adb shell "su 0 blockdev --getsize64 /dev/block/mmcblk0p22"
+# 3221225472 bytes (3 GB exactly, matching scatter file size)
+```
+
+This discrepancy is common in MediaTek OEM/custom builds where the scatter file represents the firmware structure, but the actual GPT partition table may be reordered.
 
 ## Total Layout Summary
 

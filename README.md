@@ -140,30 +140,68 @@ Mem write auth:  False
 
 ## Working Solution: ADB Direct Access ✅
 
-Since the device boots normally and is already rooted/accessible via ADB:
+Since the device boots normally and is already rooted/accessible via ADB, we can extract the system partition directly.
 
-### Option A: Pull System Directory
+### Actual Partition Discovery
+
+**IMPORTANT:** The scatter file indicated system should be at `mmcblk0p23`, but the actual mounted partition is different:
+
+```bash
+adb shell "mount | grep system"
+# Output: /dev/block/mmcblk0p22 on /system type ext4 (ro,seclabel,relatime,data=ordered)
+
+adb shell "su 0 blockdev --getsize64 /dev/block/mmcblk0p22"
+# Output: 3221225472 (3 GB exactly)
+```
+
+**The system partition is actually `/dev/block/mmcblk0p22`, not p23 as the scatter file suggests.**
+
+This discrepancy between scatter file and actual partition mapping is common in MediaTek devices, especially custom/OEM builds.
+
+### Option A: Raw Partition Dump via DD (RECOMMENDED) ✅
+
+```bash
+# Extract system partition (3 GB, takes 5-15 minutes)
+cd ~/mt8127-system-extraction
+adb shell "su 0 dd if=/dev/block/mmcblk0p22 bs=4M" | pv -s 3221225472 > system_partition.img
+
+# Verify extraction
+file system_partition.img
+# Should show: Linux rev 1.0 ext4 filesystem data
+```
+
+**This method successfully extracted the complete system partition as a raw ext4 image.**
+
+### Option B: Pull System Directory
 ```bash
 adb pull /system /path/to/backup/system/
 ```
 
-### Option B: Raw Partition Dump via DD
+This pulls individual files but loses partition metadata and permissions.
+
+### Writing System Partition Back
+
+After modifying the system image, write it back:
+
 ```bash
-# Find system partition block device
-adb shell ls -l /dev/block/platform/mtk-msdc.0/by-name/
+# Method 1: Direct pipe (faster, recommended)
+cat system_partition.img | adb shell "su 0 dd of=/dev/block/mmcblk0p22 bs=4M"
 
-# Dump raw system partition
-adb shell su -c "dd if=/dev/block/mmcblk0p23 bs=4M" | pv > system_partition.img
-
-# Or pull over ADB
-adb pull /dev/block/mmcblk0p23 system_partition.img
+# Method 2: Push then write (safer for verification)
+adb push system_partition.img /sdcard/system_partition.img
+adb shell "su 0 dd if=/sdcard/system_partition.img of=/dev/block/mmcblk0p22 bs=4M"
+adb shell "rm /sdcard/system_partition.img"
 ```
 
-### Option C: Create Flashable System Image
+**CRITICAL:** System partition must be unmounted before writing:
 ```bash
-# Using make_ext4fs from Android source
-adb shell su -c "make_ext4fs -s -l 3G -a system system.img /system"
-adb pull /system_image_dir/system.img
+adb shell "su 0 umount /system"
+# Or boot to recovery mode
+```
+
+Use the provided script for safer write operations:
+```bash
+./scripts/write_system_dd.sh system_partition.img
 ```
 
 ## Files in This Repository
