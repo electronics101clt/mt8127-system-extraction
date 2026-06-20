@@ -1,0 +1,70 @@
+Preloader - Status: Waiting for PreLoader VCOM, please reconnect mobile/iot device to brom mode
+
+Port - Hint:
+
+Power off the phone before connecting.
+For brom mode, press and hold vol up, vol dwn, or all hw buttons and connect usb.
+For preloader mode, don't press any hw button and connect usb.
+If it is already connected and on, hold power for 10 seconds to reset.
+
+
+...........
+
+Port - Hint:
+
+Power off the phone before connecting.
+For brom mode, press and hold vol up, vol dwn, or all hw buttons and connect usb.
+For preloader mode, don't press any hw button and connect usb.
+If it is already connected and on, hold power for 10 seconds to reset.
+
+
+..........Port - Device detected :)
+Preloader - Detected regular mode !
+Preloader - 	CPU:			MT8127/MT3367/AC8227L()
+Preloader - 	HW version:		0x0
+Preloader - 	WDT:			0x10007000
+Preloader - 	Uart:			0x11002000
+Preloader - 	Brom payload addr:	0x100a00
+Preloader - 	DA payload addr:	0x201000
+Preloader - 	Var1:			0xa
+Preloader - Disabling Watchdog...
+Preloader - HW code:			0x8127
+Preloader - Target config:		0x0
+Preloader - 	SBC enabled:		False
+Preloader - 	SLA enabled:		False
+Preloader - 	DAA enabled:		False
+Preloader - 	SWJTAG enabled:		False
+Preloader - 	EPP_PARAM at 0x600 after EMMC_BOOT/SDMMC_BOOT:	False
+Preloader - 	Root cert required:	False
+Preloader - 	Mem read auth:		False
+Preloader - 	Mem write auth:		False
+Preloader - 	Cmd 0xC8 blocked:	False
+Preloader - Get Target info
+Preloader - 	HW subcode:		0x8a00
+Preloader - 	HW Ver:			0xca04
+Preloader - 	SW Ver:			0x0
+DaHandler - Device is unprotected.
+DaHandler - Device is in Preloader-Mode.
+DALegacy - Uploading legacy da...
+DALegacy - Uploading legacy stage 1 from MTK_DA_V5.bin
+LegacyExt
+LegacyExt - [LIB]: [33mLegacy address check not patched.[0m
+LegacyExt
+LegacyExt - [LIB]: [33mLegacy DA2 CMD F0 not patched.[0m
+LegacyExt
+LegacyExt - [LIB]: [33mLegacy Read is normal.[0m
+Preloader - Jumping to 0x200000
+Preloader - Jumping to 0x200000: ok.
+DALegacy - Got loader sync !
+DALegacy - Reading nand info
+DALegacy - Reading emmc info
+DALegacy - ACK: 04028d
+DALegacy - Setting stage 2 config ...
+DALegacy - Uploading stage 2...
+Done |----------| 1.8% Stage 2: (0x1000/0x388C4),0.00 MB/sProgress: |----------| 3.5% Stage 2: (0x2000/0x388C4), 41.83 KB/s  Progress: |█---------| 5.3% Stage 2: (0x3000/0x388C4), 2.89 MB/s  Progress: |█---------| 7.1% Stage 2: (0x4000/0x388C4), 2.87 MB/s  Progress: |█---------| 8.8% Stage 2: (0x5000/0x388C4), 3.26 MB/s  Progress: |█---------| 10.6% Stage 2: (0x6000/0x388C4), 3.03 MB/s  Progress: |█---------| 12.4% Stage 2: (0x7000/0x388C4), 2.83 MB/s  Progress: |█---------| 14.1% Stage 2: (0x8000/0x388C4), 2.95 MB/s  Progress: |██--------| 15.9% Stage 2: (0x9000/0x388C4), 3.22 MB/s  Progress: |██--------| 17.7% Stage 2: (0xA000/0x388C4), 3.82 MB/s  Progress: |██--------| 19.5% Stage 2: (0xB000/0x388C4), 4.11 MB/s  Progress: |██--------| 21.2% Stage 2: (0xC000/0x388C4), 4.1 MB/s  Progress: |██--------| 23.0% Stage 2: (0xD000/0x388C4), 4.37 MB/s  Progress: |██--------| 24.8% Stage 2: (0xE000/0x388C4), 4.67 MB/s  Progress: |███-------| 26.5% Stage 2: (0xF000/0x388C4), 4.7 MB/s  Progress: |███-------| 28.3% Stage 2: (0x10000/0x388C4), 5.74 MB/s  Progress: |███-------| 30.1% Stage 2: (0x11000/0x388C4), 5.31 MB/s  Progress: |███-------| 31.8% Stage 2: (0x12000/0x388C4), 5.56 MB/s  Progress: |███-------| 33.6% Stage 2: (0x13000/0x388C4), 5.17 MB/s  Progress: |████------| 35.4% Stage 2: (0x14000/0x388C4), 5.0 MB/s  Progress: |████------| 37.1% Stage 2: (0x15000/0x388C4), 4.51 MB/s  Progress: |████------| 38.9% Stage 2: (0x16000/0x388C4), 4.41 MB/s  Progress: |████------| 40.7% Stage 2: (0x17000/0x388C4), 3.7 MB/s  Progress: |████------| 42.4% Stage 2: (0x18000/0x388C4), 4.1 MB/s  Progress: |████------| 44.2% Stage 2: (0x19000/0x388C4), 5.21 MB/s  Progress: |█████-----| 46.0% Stage 2: (0x1A000/0x388C4), 5.32 MB/s  Progress: |█████-----| 47.7% Stage 2: (0x1B000/0x388C4), 5.36 MB/s  Progress: |█████-----| 49.5% Stage 2: (0x1C000/0x388C4), 4.33 MB/s  Progress: |█████-----| 51.3% Stage 2: (0x1D000/0x388C4), 4.45 MB/s  Progress: |█████-----| 53.1% Stage 2: (0x1E000/0x388C4), 1.39 MB/s  Progress: |█████-----| 54.8% Stage 2: (0x1F000/0x388C4), 2.14 MB/s  Progress: |██████----| 56.6% Stage 2: (0x20000/0x388C4), 2.49 MB/s  Progress: |██████----| 58.4% Stage 2: (0x21000/0x388C4), 3.07 MB/s  Progress: |██████----| 60.1% Stage 2: (0x22000/0x388C4), 2.68 MB/s  Progress: |██████----| 61.9% Stage 2: (0x23000/0x388C4), 1.56 MB/s  Progress: |██████----| 63.7% Stage 2: (0x24000/0x388C4), 2.4 MB/s  Progress: |███████---| 65.4% Stage 2: (0x25000/0x388C4), 2.84 MB/s  Progress: |███████---| 67.2% Stage 2: (0x26000/0x388C4), 3.39 MB/s  Progress: |███████---| 69.0% Stage 2: (0x27000/0x388C4), 3.74 MB/s  Progress: |███████---| 70.7% Stage 2: (0x28000/0x388C4), 3.59 MB/s  Progress: |███████---| 72.5% Stage 2: (0x29000/0x388C4), 3.62 MB/s  Progress: |███████---| 74.3% Stage 2: (0x2A000/0x388C4), 3.77 MB/s  Progress: |████████--| 76.0% Stage 2: (0x2B000/0x388C4), 3.71 MB/s  Progress: |████████--| 77.8% Stage 2: (0x2C000/0x388C4), 3.85 MB/s  Progress: |████████--| 79.6% Stage 2: (0x2D000/0x388C4), 4.1 MB/s  Progress: |████████--| 81.3% Stage 2: (0x2E000/0x388C4), 3.59 MB/s  Progress: |████████--| 83.1% Stage 2: (0x2F000/0x388C4), 3.43 MB/s  Progress: |████████--| 84.9% Stage 2: (0x30000/0x388C4), 3.3 MB/s  Progress: |█████████-| 86.7% Stage 2: (0x31000/0x388C4), 3.31 MB/s  Progress: |█████████-| 88.4% Stage 2: (0x32000/0x388C4), 3.35 MB/s  Progress: |█████████-| 90.2% Stage 2: (0x33000/0x388C4), 3.37 MB/s  Progress: |█████████-| 92.0% Stage 2: (0x34000/0x388C4), 3.63 MB/s  Progress: |█████████-| 93.7% Stage 2: (0x35000/0x388C4), 3.78 MB/s  Progress: |██████████| 95.5% Stage 2: (0x36000/0x388C4), 3.82 MB/s  Progress: |██████████| 97.3% Stage 2: (0x37000/0x388C4), 4.14 MB/s  Progress: |██████████| 99.0% Stage 2: (0x38000/0x388C4), 3.66 MB/s  Progress: |██████████| 100.0% Stage 2: (0x388C4/0x388C4), 1.43 MB/s  
+DALegacy - Waiting for response ...
+DALegacy - Successfully uploaded stage 2
+DeviceClass
+DeviceClass - [LIB]: [31mUSB Overflow[0m
+DaHandler
+DaHandler - [LIB]: [31mFailed to upload da.[0m

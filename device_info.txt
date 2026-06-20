@@ -1,0 +1,59 @@
+Device Information - MT8127/MT3367 Android Head Unit
+========================================================
+
+Detected via mtkclient:
+-----------------------
+CPU: MT8127/MT3367/AC8227L()
+HW version: 0x0
+HW code: 0x8127
+HW subcode: 0x8a00
+HW Ver: 0xca04
+SW Ver: 0x0
+
+WDT: 0x10007000
+Uart: 0x11002000
+Brom payload addr: 0x100a00
+DA payload addr: 0x201000
+Var1: 0xa
+
+Security Status:
+----------------
+SBC enabled: False
+SLA enabled: False
+DAA enabled: False
+SWJTAG enabled: False
+EPP_PARAM at 0x600 after EMMC_BOOT/SDMMC_BOOT: False
+Root cert required: False
+Mem read auth: False
+Mem write auth: False
+Cmd 0xC8 blocked: False
+
+Device is unprotected.
+Device is in Preloader-Mode.
+
+ADB Device Info:
+----------------
+Serial: M7YHEIB69SSSSSA6
+Model: 9210B
+Build Fingerprint: alps/full_8227L_demo/8227L_demo:10.0/O11019/1735544622:user/test-keys
+
+SystemUI Information:
+---------------------
+Package: com.android.systemui
+Path: /system/priv-app/MtkSystemUI/MtkSystemUI.apk
+Version: 9520.10100.0000
+Version Code: 27
+Target SDK: Android 8.1 (API 27)
+Size: 11 MB
+
+Storage:
+--------
+Type: EMMC
+Platform: MT3367
+Project: 8227l_demo
+Boot Channel: MSDC_0
+Block Size: 0x20000
+
+USB Device:
+-----------
+Bus 001 Device 021: ID 0e8d:2000 MediaTek Inc. MT65xx Preloader

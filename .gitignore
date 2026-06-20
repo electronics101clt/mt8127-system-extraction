@@ -1,0 +1,17 @@
+# System extraction outputs
+*.img
+*.bin
+system_backup/
+android_system_readback/
+
+# Temporary files
+*.log.tmp
+*.swp
+*~
+
+# ADB logs
+adb_*.txt
+
+# Large dumps
+*.raw
+*.dd
