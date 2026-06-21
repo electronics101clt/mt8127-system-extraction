@@ -1,17 +1,9 @@
-# System extraction outputs
-*.img
-*.bin
-system_backup/
-android_system_readback/
+# Large database files (>100MB)
+complete-system-database.json
+system-database.json
+system-detailed-analysis.json
 
-# Temporary files
-*.log.tmp
-*.swp
-*~
-
-# ADB logs
-adb_*.txt
-
-# Large dumps
-*.raw
-*.dd
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
